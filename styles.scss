@@ -1,0 +1,66 @@
+
+@import "./resets.scss";
+@import "./variables.scss";
+
+body {
+    background-color: nth($color-pal, 2);
+    font-family: $body-font;
+}
+header {
+    height: $h1-height;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: nth($color-pal, 5);
+    font-family: $h1-font;
+    font-weight: 700;
+    text-transform: lowercase;
+}
+.content-wrap .form {
+    display: none;
+}
+.after-form {
+    // visibility: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: $column-size;
+    grid-row-gap: $column-size;
+}
+.content-wrap {
+    margin: auto;
+    max-width: 900px;
+  
+    color: nth($color-pal, 4);
+    h2 {
+        color: nth($color-pal, 4);
+    }
+    height: 600px;
+    div {
+        padding: 30px;
+        border-radius: 10px;
+        background-color: nth($color-pal, 1);
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+        0 100px 80px rgba(0, 0, 0, 0.12);//1px 5px 5px nth($color-pal, 3);
+    }
+}
+@media only screen and (min-width: 1000px) {
+    .content-wrap {
+        grid-template-columns: 1fr 2fr;
+        #tasks {
+            grid-area: 1 / 2 / span 2 / span 1;
+        }
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .content-wrap {
+        grid-template-rows: 1fr 1fr 4fr;
+        max-width: 700px;
+        height: 700px;
+        padding: 0% 10% 10% 10%;
+    }
+}

@@ -1,0 +1,86 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #83c5be;
+  font-family: "Montserrat", sans-serif;
+}
+
+header {
+  height: 15vh;
+  min-height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #D45F35;
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 700;
+  text-transform: lowercase;
+}
+
+.content-wrap .form {
+  display: none;
+}
+
+.after-form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+}
+
+.content-wrap {
+  margin: auto;
+  max-width: 900px;
+  color: #ffddd2;
+  height: 600px;
+}
+
+.content-wrap h2 {
+  color: #ffddd2;
+}
+
+.content-wrap div {
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #006d77;
+  -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+@media only screen and (min-width: 1000px) {
+  .content-wrap {
+    -ms-grid-columns: 1fr 2fr;
+        grid-template-columns: 1fr 2fr;
+  }
+  .content-wrap #tasks {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-area: 1 / 2 / span 2 / span 1;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .content-wrap {
+    -ms-grid-rows: 1fr 1fr 4fr;
+        grid-template-rows: 1fr 1fr 4fr;
+    max-width: 700px;
+    height: 700px;
+    padding: 0% 10% 10% 10%;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
