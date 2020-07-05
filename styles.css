@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -29,6 +30,7 @@ header {
   color: #D45F35;
   font-family: "Comfortaa", sans-serif;
   font-weight: 700;
+  font-size: 20px;
   text-transform: lowercase;
 }
 
@@ -51,6 +53,7 @@ header {
 
 .content-wrap div:not(.inner-text):not(.form):not(.toPad) {
   padding: 30px 30px 60px 30px;
+  overflow: hidden;
   border-radius: 5px;
   background-color: #006d77;
   -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
@@ -67,6 +70,13 @@ header {
 
 .inner-text .toPad {
   padding: 20px;
+  height: 100%;
+  max-height: 510px;
+  overflow: scroll;
+}
+
+.inner-text form {
+  padding-bottom: 10px;
 }
 
 ul {
@@ -75,6 +85,27 @@ ul {
 
 ul li {
   padding-bottom: 10px;
+  padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+ul li p {
+  font-size: 20px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 22px;
+  overflow: scroll;
 }
 
 #item-entry {
@@ -86,6 +117,37 @@ ul li {
   padding: 10px;
   -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
           box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.tick::before {
+  content: '✓';
+  font-size: 20px;
+  display: none;
+}
+
+.done .tick::before {
+  display: inline;
+}
+
+.tick {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #D45F35;
+  border-radius: 5px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -104,10 +166,10 @@ ul li {
 
 @media only screen and (max-width: 1000px) {
   .content-wrap {
-    -ms-grid-rows: 1fr 1fr 4fr;
-        grid-template-rows: 1fr 1fr 4fr;
+    -ms-grid-rows: 1fr 1fr 3fr;
+        grid-template-rows: 1fr 1fr 3fr;
     max-width: 700px;
-    height: 700px;
+    height: 1000px;
     padding: 0% 10% 10% 10%;
   }
 }

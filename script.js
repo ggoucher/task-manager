@@ -18,7 +18,7 @@ function renderItem(toDo) {
     node.innerHTML = `
         <input id="${toDo.id}" type="checkbox"/>
         <label for="${toDo.id}" class="tick js-tick"></label>
-        <span>${toDo.task}</span>
+        <p>${toDo.task}</p>
         <button class="delete-todo js-delete-todo">
         </button>
     `;
