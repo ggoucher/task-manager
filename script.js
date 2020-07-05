@@ -19,8 +19,7 @@ function renderItem(toDo) {
         <input id="${toDo.id}" type="checkbox"/>
         <label for="${toDo.id}" class="tick js-tick"></label>
         <p>${toDo.task}</p>
-        <button class="delete-todo js-delete-todo">
-        </button>
+        <input class="delete-todo js-delete-todo" type="submit" aria-hidden="true" value="X"/>
     `;
 
     // Append the element to the DOM as the last child of
