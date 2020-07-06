@@ -4,14 +4,20 @@ function renderItem(toDo) {
 
     //gets the list we're going to add our task to
     const list = document.querySelector(".js-todo-list");
+    const item = document.querySelector(`[data-key='${toDo.id}']`);
 
-    const isChecked =  toDo.checked ? "done": "";
-    console.log(isChecked);
+    if (toDo.deleted) {
+        // remove the item from the DOM
+        item.remove();
+        return;
+    }
+
+    const isDone =  toDo.done ? "done": "";
 
     // Create an `li` element and assign it to `node`
     const node = document.createElement("li");
     // Set the class attribute
-    node.setAttribute('class', `todo-item ${isChecked}`);
+    node.setAttribute('class', `todo-item ${isDone}`);
     // Set the data-key attribute to the id of the todo
     node.setAttribute('data-key', toDo.id);
     // Set the contents of the `li` element created above
@@ -24,7 +30,11 @@ function renderItem(toDo) {
 
     // Append the element to the DOM as the last child of
     // the element referenced by the `list` variable
-    list.append(node);
+    if (item) {
+        list.replaceChild(node, item);
+    } else {
+        list.append(node);
+    }
 }
 
 function addItem(input) {
@@ -62,7 +72,30 @@ const list = document.querySelector(".js-todo-list");
 // Add a click event listener to the list and its children
 list.addEventListener('click', event => {
     if (event.target.classList.contains('js-tick')) {
-      const itemKey = event.target.parentElement.dataset.key;
-      toggleDone(itemKey);
+        const itemKey = event.target.parentElement.dataset.key;
+        toggleDone(itemKey);
+    }
+    if (event.target.classList.contains('js-delete-todo')) {
+        const itemKey = event.target.parentElement.dataset.key;
+        delItem(itemKey);
     }
 });
+
+function toggleDone(itemKey) {
+    const index = itemsToDo.findIndex(item => item.id = itemKey);
+
+    //reversing done status
+    itemsToDo[index].done = !itemsToDo[index].done;
+    renderItem(itemsToDo[index]);
+}
+
+function delItem(itemKey) {
+    const index = itemsToDo.findIndex(item => item.id = itemKey);
+
+    const toDoDel = {
+        deleted: true,
+        ...itemsToDo[index]
+    };
+    itemsToDo.splice(index, 1);
+    renderItem(toDoDel);
+}
