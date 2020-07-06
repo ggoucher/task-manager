@@ -34,11 +34,11 @@ header {
     color: nth($color-pal, 4);
     h2 {
         color: nth($color-pal, 4);
-        // padding-bottom: $def-padding;
+        padding-bottom: $def-padding;
     }
     height: 600px;
     div:not(.inner-text):not(.form):not(.toPad) {
-        padding: 30px 30px 60px 30px;
+        padding: 30px 30px 70px 30px;
         overflow: hidden;
         border-radius: $bord-rad;
         background-color: nth($color-pal, 1);
@@ -67,7 +67,13 @@ header {
         padding-bottom: $def-padding;
     }
 }
-.date {
+#date {
+    // .inner-text {
+    // }
+    .toPad {
+        display: flex;
+        align-items: center;
+    }
     h3 {
         display: inline-block;
         margin: auto;
@@ -141,6 +147,7 @@ input[type="checkbox"] {
 @media only screen and (min-width: 1000px) {
     .content-wrap {
         grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr 2fr;
         #tasks {
             grid-area: 1 / 2 / span 2 / span 1;
         }

@@ -49,10 +49,11 @@ header {
 
 .content-wrap h2 {
   color: #ffddd2;
+  padding-bottom: 10px;
 }
 
 .content-wrap div:not(.inner-text):not(.form):not(.toPad) {
-  padding: 30px 30px 60px 30px;
+  padding: 30px 30px 70px 30px;
   overflow: hidden;
   border-radius: 5px;
   background-color: #006d77;
@@ -79,7 +80,16 @@ header {
   padding-bottom: 10px;
 }
 
-.date h3 {
+#date .toPad {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#date h3 {
   display: inline-block;
   margin: auto;
 }
@@ -170,6 +180,8 @@ input[type="checkbox"] {
   .content-wrap {
     -ms-grid-columns: 1fr 2fr;
         grid-template-columns: 1fr 2fr;
+    -ms-grid-rows: 1fr 2fr;
+        grid-template-rows: 1fr 2fr;
   }
   .content-wrap #tasks {
     -ms-grid-row: 1;
