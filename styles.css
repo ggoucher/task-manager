@@ -150,6 +150,7 @@ input[type="checkbox"] {
 
 .tick {
   width: 30px;
+  min-width: 30px;
   height: 30px;
   border: 3px solid #D45F35;
   border-radius: 50%;
@@ -167,6 +168,7 @@ input[type="checkbox"] {
 
 .delete-todo {
   width: 30px;
+  min-width: 30px;
   height: 30px;
   background-color: #D45F35;
   border: none;
@@ -194,10 +196,10 @@ input[type="checkbox"] {
 
 @media only screen and (max-width: 1000px) {
   .content-wrap {
-    -ms-grid-rows: 1fr 1fr 3fr;
-        grid-template-rows: 1fr 1fr 3fr;
+    -ms-grid-rows: 1fr 1.3fr 3fr;
+        grid-template-rows: 1fr 1.3fr 3fr;
     max-width: 700px;
-    height: 1000px;
+    height: 1200px;
     padding: 0% 10% 10% 10%;
   }
 }
