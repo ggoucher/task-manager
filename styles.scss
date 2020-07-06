@@ -67,6 +67,12 @@ header {
         padding-bottom: $def-padding;
     }
 }
+.date {
+    h3 {
+        display: inline-block;
+        margin: auto;
+    }
+}
 // Setting task styling
 ul {
     list-style-type: none;

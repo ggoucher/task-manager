@@ -79,6 +79,11 @@ header {
   padding-bottom: 10px;
 }
 
+.date h3 {
+  display: inline-block;
+  margin: auto;
+}
+
 ul {
   list-style-type: none;
 }

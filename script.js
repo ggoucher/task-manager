@@ -1,6 +1,17 @@
+
+//date functionality
+var today = new Date();
+var dispDate = (today.getMonth() + 1) + "/" + today.getDate() + "/" + today.getFullYear();
+const datePlace = document.querySelector("#date").querySelector(".toPad");
+datePlace.innerHTML = `<h3>${dispDate}</h3>`;
+
+
+//todo list functionality
 let itemsToDo = [];
 
 function renderItem(toDo) {
+
+    localStorage.setItem('todoItemsRef', JSON.stringify(itemsToDo));
 
     //gets the list we're going to add our task to
     const list = document.querySelector(".js-todo-list");
@@ -99,3 +110,14 @@ function delItem(itemKey) {
     itemsToDo.splice(index, 1);
     renderItem(toDoDel);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("reload");
+    const ref = localStorage.getItem('todoItemsRef');
+    if (ref) {
+      itemsToDo = JSON.parse(ref);
+      itemsToDo.forEach(t => {
+        renderItem(t);
+      });
+    }
+});
