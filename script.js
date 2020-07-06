@@ -56,3 +56,13 @@ form.addEventListener('submit', event => {
     input.focus();
     }
 });
+
+const list = document.querySelector(".js-todo-list");
+
+// Add a click event listener to the list and its children
+list.addEventListener('click', event => {
+    if (event.target.classList.contains('js-tick')) {
+      const itemKey = event.target.parentElement.dataset.key;
+      toggleDone(itemKey);
+    }
+});
