@@ -93,10 +93,11 @@ list.addEventListener('click', event => {
 });
 
 function toggleDone(itemKey) {
-    const index = itemsToDo.findIndex(item => item.id = itemKey);
-
+    const index = itemsToDo.findIndex(item => item.id === Number(itemKey));
+    console.log(index);
     //reversing done status
     itemsToDo[index].done = !itemsToDo[index].done;
+    console.log(itemsToDo[index]);
     renderItem(itemsToDo[index]);
 }
 
