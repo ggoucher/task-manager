@@ -22,15 +22,14 @@ This project relied heavily on the usage of CSS grid to make a responsive final 
 <img src="rm_imgs/dlayout.png" alt="Image illustrating desktop layout" style="display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;"/>
+  width: 200px;"/>
 
 ### Mobile Layout
-<<<<<<< HEAD
 
 <img src="rm_imgs/mlayout.png" alt="Image illustrating mobile layout" style="display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 30%;"/>
+  width: 150px;"/>
 
 
 ### Sass Snippet
