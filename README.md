@@ -2,7 +2,7 @@
 
 👋 Hi! 
 
-Thanks for coming to check out my project 🙂!
+Thanks for coming to check out my project! 🙂
 
 In this project, I wanted to hone my skills in responsive design, Sass, CSS Grid and Flexbox, psuedo-classes, and wanted to work on manipulating the DOM using JavaScript.
 
